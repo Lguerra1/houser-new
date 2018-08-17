@@ -33,7 +33,7 @@ export default class Dashboard extends Component {
 
     render() {
         let displayHouses = () => {
-            this.state.houses.map(house => {
+           return this.state.houses.map(house => {
                 let { id, price, address, city, state, zip } = house
                 return (
 
