@@ -1,7 +1,14 @@
-const express = require ('express')
-const bodyParser = require ('body-parser')
+const express = require('express');
+const bodyParser = require('body-parser');
+const massive = require('massive');
+require('dotenv').config()
+const { CONNECTION_STRING } = process.env
 
 const app = express();
+
+massive(CONNECTION_STRING).then(db => {
+    app.set('db', db);
+})
 
 app.use(bodyParser.json())
 
